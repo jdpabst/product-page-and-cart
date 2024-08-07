@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx nodemon index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "db:sync": "npx prisma migrate dev --name init"
+    "db:sync": "npx prisma migrate dev --name init",
+    "seed": "ts-node scripts/menuSeed.ts"
   },
   "author": "",
   "license": "ISC",

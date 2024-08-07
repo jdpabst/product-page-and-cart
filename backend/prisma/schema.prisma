@@ -4,6 +4,12 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+// after adding to this file run these commands in the terminal:
+//  npx prisma migrate dev --name descriptive-migration-name
+//  npx prisma generate
+//  restart VS code if needed
+
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -21,5 +27,18 @@ model User {
   email     String
   firstName String?   
   lastName  String?
+}
+
+model Menu {
+  id                  Int       @id @default(autoincrement())
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  imageThumbnail      String
+  imageMobile         String
+  imageTablet         String
+  imageDesktop        String
+  name                String
+  category            String
+  price               Float
 }
 
