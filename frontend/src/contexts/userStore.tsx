@@ -1,13 +1,14 @@
 import { createContext, useContext, useState } from "react";
-import { User, UserContextType } from "../types";
+import { UserContextType } from "../types";
 
 const UserContext = createContext<UserContextType>(null);
 
 export const UserStore = ({ children }) => {
- const [user, setUser] = useState<User>(null)
+ const [menu, setMenu] = useState([])
+
 
  return (
-  <UserContext.Provider value={{ user, setUser, }}>
+  <UserContext.Provider value={{ menu, setMenu }}>
    {children}
   </ UserContext.Provider>
  )

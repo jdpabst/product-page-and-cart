@@ -1,9 +1,16 @@
-export type UserContextType = {
- user: User;
- setUser: (newValue: User) => void;
+export interface Menu {
+ id: number;
+ imageThumbnail: string;
+ imageMobile: string;
+ imageTablet: string;
+ imageDesktop: string;
+ name: string;
+ category: string;
+ price: number
 }
 
-export type User = {
- id: number;
- // add more stuff here as needed
+export type UserContextType = {
+ menu: Menu[];
+ setMenu: any;
 }
+
