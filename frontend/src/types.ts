@@ -6,7 +6,7 @@ export interface Menu {
  imageDesktop: string;
  name: string;
  category: string;
- price: number
+ price: string
 }
 
 export type UserContextType = {

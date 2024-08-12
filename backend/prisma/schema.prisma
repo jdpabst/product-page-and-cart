@@ -39,6 +39,6 @@ model Menu {
   imageDesktop        String
   name                String
   category            String
-  price               Float
+  price               Decimal   @db.Decimal(10, 2)
 }
 
