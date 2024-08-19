@@ -13,7 +13,7 @@ function App() {
 
   async function getMenu() {
     const menu = await axios.get('http://localhost:3001/menu')
-    // console.log(menu.data)
+    console.log(menu.data)
     setMenu(menu.data)
   }
 
