@@ -21,29 +21,39 @@ export default function Home() {
 
  return (
   <div className='main-container'>
-   <div className='menu-items-container'>
-    <ul className='menu-items-list-container'>
-     {menu.map((item, id) => (
-      <li key={id}>
-       <div className='menu-item-container'>
-        <div className='menu-img-and-bttn-container'>
-         <img className='product-img' src={item.imageDesktop} />
-         <button>
-          <img src='./assets/images/icon-add-to-cart.svg' />
-          Add to Cart
-         </button>
+
+   <h1 className='page-title'>Desserts</h1>
+
+   <div className='menu-cart-container'>
+
+    <div className='menu-items-container'>
+     <ul className='menu-items-list-container'>
+      {menu.map((item, id) => (
+       <li key={id}>
+        <div className='menu-item-container'>
+         <div className='menu-img-and-bttn-container'>
+          <img className='product-img' src={item.imageDesktop} />
+          <button>
+           <img src='./assets/images/icon-add-to-cart.svg' />
+           <span>Add to Cart</span>
+          </button>
+         </div>
+         <div className='menu-item-info-container'>
+          <p>{item.category}</p>
+          <h1>{item.name}</h1>
+          <h2>${formatPrice(item.price)}</h2>
+         </div>
         </div>
-        <div className='menu-item-info-container'>
-         <p>{item.category}</p>
-         <h1>{item.name}</h1>
-         <h2>${formatPrice(item.price)}</h2>
-        </div>
-       </div>
-      </li>
-     ))}
-    </ul>
+       </li>
+      ))}
+     </ul>
+    </div>
+
+    < Cart />
+
    </div>
-   < Cart />
+
   </div>
+
  )
 }
