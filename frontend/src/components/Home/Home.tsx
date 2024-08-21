@@ -22,9 +22,10 @@ export default function Home() {
  return (
   <div className='main-container'>
 
-   <h1 className='page-title'>Desserts</h1>
+
 
    <div className='menu-cart-container'>
+    <h1 className='page-title'>Desserts</h1>
 
     <div className='menu-items-container'>
      <ul className='menu-items-list-container'>
@@ -49,10 +50,10 @@ export default function Home() {
      </ul>
     </div>
 
-    < Cart />
+
 
    </div>
-
+   < Cart />
   </div>
 
  )

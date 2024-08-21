@@ -5,18 +5,19 @@ export default function Cart() {
 
 
  return (
-  <div>
-   <h1>Your Cart ({cartCount})</h1>
-   {cartCount !== 0 ?
-    <div>
-
-    </div> :
-    <div>
+  <div className='main-cart-container'>
+   <div className='cart-container'>
+    <h1 className='cart-title'>Your Cart ({cartCount})</h1>
+    {cartCount !== 0 ?
      <div>
-      <img src='/assets/images/illustration-empty-cart.svg' />
+
+     </div> :
+     <div className='cart-contents'>
+      <img className='empty-cart-img' src='/assets/images/illustration-empty-cart.svg' />
       <p>Your added items will appear here</p>
-     </div>
-    </div>}
+     </div>}
+   </div>
   </div>
+
  )
 }

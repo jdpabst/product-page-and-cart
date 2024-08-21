@@ -2,6 +2,8 @@
  /* border: 1px solid blue; */
  padding: 80px 100px 80px 100px;
  background-color: hsl(20, 50%, 98%);
+ display: flex;
+ flex-direction: row;
 }
 
 .page-title {
@@ -12,13 +14,12 @@
 
 .menu-cart-container {
  /* border: 1px solid salmon; */
- display: flex;
- flex-direction: row;
+ width: 67%;
 }
 
 .menu-items-container {
  /* border: 1px solid black; */
- width: 67%;
+ width: 100%;
 }
 
 .menu-items-list-container {
@@ -34,7 +35,7 @@
 
 .menu-item-container {
  /* border: 1px solid pink; */
- margin-left: 20px;
+ margin-right: 20px;
 }
 
 .menu-img-and-bttn-container {
@@ -73,6 +74,20 @@
   span {
    font-weight: 700;
    color: hsl(14, 65%, 9%)
+  }
+ }
+
+ button:hover {
+  cursor: pointer;
+  background-color: hsl(14, 86%, 42%);
+  border: 1px solid hsl(14, 86%, 42%);
+
+  span {
+   color: white;
+  }
+
+  img {
+   filter: invert(100%) sepia(96%) saturate(14%) hue-rotate(238deg) brightness(103%) contrast(100%);
   }
  }
 }
