@@ -40,5 +40,25 @@ model Menu {
   name                String
   category            String
   price               Decimal   @db.Decimal(10, 2)
+  cartItems           CartItem[]
 }
 
+
+NOT ADDED YET:
+
+model Cart {
+  id        Int        @id @default(autoincrement())
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  items     CartItem[] // One-to-many relationship with CartItem
+}
+
+model CartItem {
+  id       Int     @id @default(autoincrement())
+  quantity Int
+  cartId   Int
+  cart     Cart    @relation(fields: [cartId], references: [id])
+  menuId   Int
+  menu     Menu    @relation(fields: [menuId], references: [id])
+}

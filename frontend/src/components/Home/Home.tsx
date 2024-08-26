@@ -1,15 +1,12 @@
+import { useState } from 'react';
 import { useUserContext } from 'src/contexts/userStore';
 import Cart from '../Cart/Cart';
 import './Home.css';
 
 export default function Home() {
  const { menu } = useUserContext();
-
- // if (menu.length > 0) {
- //  console.log(menu[0].price);
- // } else {
- //  console.log('Menu is empty or still loading.');
- // }
+ const [cartCount, setCartCount] = useState({});
+ const [cart, setCart] = useState([]);
 
 
  const formatPrice = (price: string): string => {
@@ -17,24 +14,35 @@ export default function Home() {
   return numericPrice.toFixed(2);
  };
 
+ const handleAddToCart = (id) => {
+  setCartCount((prev) => ({
+   ...prev,
+   [id]: (prev[id] || 0) + 1
+  }));
+
+  setCart((prev) => ([...prev, id]))
+
+  console.log(cartCount)
+ }
+
 
 
  return (
   <div className='main-container'>
 
-
-
    <div className='menu-cart-container'>
+
     <h1 className='page-title'>Desserts</h1>
 
     <div className='menu-items-container'>
+
      <ul className='menu-items-list-container'>
       {menu.map((item, id) => (
        <li key={id}>
         <div className='menu-item-container'>
          <div className='menu-img-and-bttn-container'>
           <img className='product-img' src={item.imageDesktop} />
-          <button>
+          <button onClick={() => handleAddToCart(id)}>
            <img src='./assets/images/icon-add-to-cart.svg' />
            <span>Add to Cart</span>
           </button>
@@ -48,12 +56,11 @@ export default function Home() {
        </li>
       ))}
      </ul>
+
     </div>
 
-
-
    </div>
-   < Cart />
+   < Cart menu={menu} cart={cart} count={cartCount} />
   </div>
 
  )

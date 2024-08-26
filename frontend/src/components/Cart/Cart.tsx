@@ -1,6 +1,10 @@
 import './Cart.css';
 
-export default function Cart() {
+export default function Cart(props) {
+ const { cart, count, menu } = props;
+
+ console.log(cart)
+ // console.log(count)
  let cartCount = 0;
 
 
@@ -10,7 +14,10 @@ export default function Cart() {
     <h1 className='cart-title'>Your Cart ({cartCount})</h1>
     {cartCount !== 0 ?
      <div>
-
+      <ul></ul>
+      {cart.map((item, id) => {
+       <li key={id}>{menu[cart.id]}: {count}</li>
+      })}
      </div> :
      <div className='cart-contents'>
       <img className='empty-cart-img' src='/assets/images/illustration-empty-cart.svg' />
