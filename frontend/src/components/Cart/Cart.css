@@ -38,5 +38,18 @@
   }
 
 
+  .added-cart-items-container {
+   /* border: 1px solid black; */
+
+   .added-cart-items-list {
+    list-style-type: none;
+    /* border: 1px dotted hotpink; */
+   }
+
+   .added-cart-item {
+    /* border: 1px solid blue; */
+   }
+  }
+
  }
 }

@@ -5,7 +5,6 @@ import './Home.css';
 
 export default function Home() {
  const { menu } = useUserContext();
- const [cartCount, setCartCount] = useState({});
  const [cart, setCart] = useState([]);
 
 
@@ -15,14 +14,11 @@ export default function Home() {
  };
 
  const handleAddToCart = (id) => {
-  setCartCount((prev) => ({
+  setCart((prev) => ({
    ...prev,
    [id]: (prev[id] || 0) + 1
   }));
 
-  setCart((prev) => ([...prev, id]))
-
-  console.log(cartCount)
  }
 
 
@@ -60,7 +56,7 @@ export default function Home() {
     </div>
 
    </div>
-   < Cart menu={menu} cart={cart} count={cartCount} />
+   < Cart menu={menu} cart={cart} />
   </div>
 
  )
