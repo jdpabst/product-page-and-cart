@@ -9,10 +9,9 @@ export interface Menu {
  price: string;
 }
 
-// export interface Cart {
-//  id: number;
-//  items?: CartItem[]
-// }
+export interface Cart {
+ [key: number]: number
+}
 
 // export interface CartItem {
 //  id: number;
@@ -22,8 +21,8 @@ export interface Menu {
 export type UserContextType = {
  menu: Menu[];
  setMenu: any;
- // cart: Cart[];
- // setCart: any;
+ cart: Cart;
+ setCart: any;
  // cartItem: CartItem[];
  // setCartItem: any;
 }

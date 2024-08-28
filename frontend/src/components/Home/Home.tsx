@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import { useUserContext } from 'src/contexts/userStore';
 import Cart from '../Cart/Cart';
 import './Home.css';
 
 export default function Home() {
- const { menu } = useUserContext();
- const [cart, setCart] = useState([]);
+ const { menu, cart, setCart } = useUserContext();
+ // const [cart, setCart] = useState([]);
 
 
  const formatPrice = (price: string): string => {
@@ -56,7 +55,7 @@ export default function Home() {
     </div>
 
    </div>
-   < Cart menu={menu} cart={cart} />
+   < Cart formatPrice={formatPrice} />
   </div>
 
  )
