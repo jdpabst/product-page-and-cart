@@ -51,7 +51,7 @@
   padding: none;
  }
 
- button {
+ .add-to-cart-bttn {
   position: absolute;
   width: 150px;
   height: 40px;
@@ -77,7 +77,7 @@
   }
  }
 
- button:hover {
+ .add-to-cart-bttn:hover {
   cursor: pointer;
   background-color: hsl(14, 86%, 42%);
   border: 1px solid hsl(14, 86%, 42%);
@@ -88,6 +88,51 @@
 
   img {
    filter: invert(100%) sepia(96%) saturate(14%) hue-rotate(238deg) brightness(103%) contrast(100%);
+  }
+ }
+
+ .added-item-bttn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: hsl(14, 86%, 42%);
+  border: 1px solid hsl(14, 86%, 42%);
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  bottom: -2px;
+  left: 50px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+
+  button {
+   position: relative;
+   width: 15px;
+   height: 15px;
+   border: 1px solid white;
+   border-radius: 50%;
+   background-color: hsl(14, 86%, 42%);
+
+   .decrement-img {
+    position: absolute;
+    top: 5.5px;
+    left: 1.5px;
+    /* border: 1px solid black; */
+   }
+
+   .increment-img {
+    position: absolute;
+    top: 1.5px;
+    left: 1.5px;
+   }
+  }
+
+  button:hover {
+   cursor: pointer;
   }
  }
 }

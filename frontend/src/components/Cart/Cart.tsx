@@ -10,6 +10,17 @@ export default function Cart(props) {
  const count = Object.values(cart).reduce((acc, quantity) => acc + quantity, 0);
  const cartCount = count;
 
+ // console.log(Object.values(cart));
+
+ const handleCartTotal = () => {
+  return cartItems.reduce((prev, itemId) => {
+   const item = menu[Number(itemId)];
+   const quantity = cart[Number(itemId)];
+   if (!item || !quantity) return prev;
+   return prev + Number(item.price) * quantity;
+  }, 0).toFixed(2); // Format the total to two decimal places
+ };
+
  const handleIndividualTotal = (itemId) => {
   const item = menu[Number(itemId)];
   const quantity = cart[Number(itemId)];
@@ -55,11 +66,25 @@ export default function Cart(props) {
           <button onClick={() => handleRemoveItemFromCart(itemId)} className='remove-item-from-cart-bttn'>
            <img src='/assets/images/icon-remove-item.svg' />
           </button>
-
          </li>
         );
        })}
       </ul>
+      <div className='cart-total-container'>
+       <p>Order Total</p>
+       <h1>${handleCartTotal()}</h1>
+      </div>
+      <div className='carbon-neutral-container'>
+       <div className='carbon-neutral-contents'>
+        <img src='/assets/images/icon-carbon-neutral.svg' />
+        <p>This is a <b>carbon-neutral</b> delivery</p>
+       </div>
+      </div>
+      <div className='confirm-order-bttn-container'>
+       <button className='confirm-order-bttn'>
+        <p>Confirm Order</p>
+       </button>
+      </div>
      </div>
     ) : (
      <div className='cart-contents'>
