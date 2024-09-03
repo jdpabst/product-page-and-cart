@@ -23,6 +23,8 @@ export type UserContextType = {
  setMenu: any;
  cart: Cart;
  setCart: any;
+ submitted: any;
+ setSubmitted: any;
  // cartItem: CartItem[];
  // setCartItem: any;
 }
