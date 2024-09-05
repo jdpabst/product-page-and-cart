@@ -108,7 +108,7 @@ export default function Cart(props) {
    </div>
 
    {submitted ?
-    (<div className='order-confirmed-container'>
+    (<div onClick={handleResetCart} className='order-confirmed-container'>
      <div className='order-confirmed-receipt'>
 
       <div className='order-confirmed-dialog-container'>
